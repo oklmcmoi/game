@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Boy Emulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Game Boy Emulator</h1>
+    <p>Choose a ROM to play:</p>
+    <select id="romSelector">
+        <option value="roms/PokemonRed.gb">Pokemon Red</option>
+        <option value="roms/Tetris.gb">Tetris</option>
+    </select>
+    <button onclick="startEmulator()">Play</button>
+
+    <div id="emulatorContainer"></div>
+
+    <!-- Inclusion des fichiers JavaScript pour le fonctionnement de l'émulateur -->
+    <script src="js/other/windowStack.js"></script>
+    <script src="js/other/terminal.js"></script>
+    <script src="js/other/gui.js"></script>
+    <script src="js/other/base64.js"></script>
+    <script src="js/other/json2.js"></script>
+    <script src="js/other/swfobject.js"></script>
+    <script src="js/other/resampler.js"></script>
+    <script src="js/other/XAudioServer.js"></script>
+    <script src="js/other/resize.js"></script>
+    <script src="js/GameBoyCore.js"></script>
+    <script src="js/GameBoyIO.js"></script>
+
+    <script>
+        // Fonction pour démarrer l'émulateur avec la ROM sélectionnée
+        function startEmulator() {
+            const rom = document.getElementById('romSelector').value;
+            loadEmulator(rom);  // Appelle la fonction qui charge l'émulateur
+        }
+
+        function loadEmulator(rom) {
+            // Tu devras implémenter la logique de chargement de la ROM et le démarrage de l'émulateur ici.
+            console.log("Loading ROM: " + rom);
+            // Ici, tu peux utiliser les scripts importés pour démarrer l'émulateur avec la ROM.
+        }
+    </script>
+</body>
+</html>
